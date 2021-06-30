@@ -1,0 +1,225 @@
+$colorbg: darksalmon;
+$altoimg:200px;
+$colorbgitems:#F6F6F6;
+
+
+@mixin imagenes_1 () {
+    
+    margin-top: 50px;
+    height: $altoimg;
+    width: 200px;
+} 
+
+@mixin links ($flex,$column,$centering,$center) {
+    display: $flex;
+    flex-direction: $column;
+    justify-content: $centering;
+    align-items: $center;
+    
+}
+
+@mixin around($radius:15px) {
+    border-radius: $radius;
+}
+
+@mixin button ($colorbg,$blue,$color) {
+    background-color: $colorbg;
+    border:$blue;
+    color: $color;
+}
+
+
+#enlaces{
+    @include links(flex,column,center,center);
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $colorbgitems;
+    padding: 5px;
+    width: 750px;
+    height: 100px;
+    border: 3px double grey;
+    border-radius: 30px;
+    
+
+    ul {
+        display: flex;
+        width: 60%;
+        justify-content: space-around;
+        @media (max-width:600px){
+            flex-direction: column;
+        }
+    }
+
+    a {
+        font-size: 15px;
+        color: black;
+    }
+
+    @media (max-width:600px){
+        width: 580px;
+        height: 180px;
+    }
+}
+
+
+
+#imagenTecho {
+    position:absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 120px;
+    height: 120px;
+    @media (max-width:600px) {
+        margin-left: 5px;
+        margin-top: 30px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+#titulo{
+    position:static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-family:'Times New Roman';
+    font-size:xx-large;
+    @media (max-width:600px) {
+        margin-left: 120px;
+        font-size:25px;
+    }
+    
+}
+
+
+#techo {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 174, 255);
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px double black;
+    width: 1350px;
+    height: 150px;
+   @include around(30px);
+   @media (max-width:600px){
+    width: 580px;
+   }
+}
+
+
+
+div, p {
+    margin: 20px ;
+    
+}
+
+
+#imagenes{
+    @media (max-width:600px){
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .columna_1 {
+        @include imagenes_1();
+        @media (max-width:600px){
+            height:550px;
+            width:550px;
+        }
+    }
+    
+    .columna_2 {
+        @include imagenes_1();
+        @media (max-width:600px){
+            height:550px;
+            width:550px; 
+        }
+    }
+    
+    .columna_3 {
+        @include imagenes_1();
+        @media (max-width:600px){
+            display: none;
+        }
+    }
+
+       
+}
+
+
+.flex-countainer{
+    display: flex;
+    margin-top: 10px;
+    background-color: bisque;
+    
+
+    div{
+        display: flex;
+        width: 60px;
+        margin: 20px;
+        background-color: brown;
+        align-items: center;
+        justify-content: center;
+    }
+    @media (max-width:600px) {
+            flex-direction: column;
+    } 
+}
+
+#cajas{
+    @media (max-width:600px){
+        margin-top: 10px;
+    }
+    .col-red{
+        background-color: red;
+        }
+        .col-blue{
+            background-color: blue;
+        }
+        .col-green{
+            background-color: green;
+        }        
+}
+
+
+.card{
+    margin-top:20px ;
+    height:350px;
+    
+}
+
+.card-body{
+    margin-top: 0px;
+}
+
+.button {
+    margin-left: 10px;
+    @include button(#0d6efd,blue,white);
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+
+    &:hover{
+        border-radius: 5px;
+        border-color: black;
+        background-color: white;
+        color: blue;
+    }
+  }
